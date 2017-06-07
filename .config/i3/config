@@ -155,7 +155,7 @@ bindsym $mod+r mode "resize"
 bar {
  	status_command i3blocks -c /home/matt/.i3/i3blocks.conf
 	colors {
-		background $bg-color
+		background #0e1f23
 	    	separator #0e1f23 
 		#                  border             background         text
 		focused_workspace  #0e1f23            #0e1f23            #b5bdca
