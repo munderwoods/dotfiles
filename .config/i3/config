@@ -132,8 +132,10 @@ bindsym $mod+Ctrl+0 workspace 10
 for_window [class="milkytracker"] floating enable
 for_window [title="alsamixer"] floating enable
 
-#assign gchat to workspace 3
+#assign client to specific workspace
 assign [class="^Chromium$"instance="^crx_nckgahadagoaajjgafhacjanaoiihapd$"] "3 "
+assign [class="^mpv$"] "6 "
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
