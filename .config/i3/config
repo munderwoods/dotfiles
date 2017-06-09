@@ -118,10 +118,10 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # move focused container to workspace and execute program
-bindsym $mod+Ctrl+1 workspace "1 " exec i3-sensible-terminal; exec i3-sensible-terminal -e ranger; splith;
+bindsym $mod+Ctrl+1 workspace "1 " exec i3-msg append_layout .i3/workspace-1.json; exec urxvt; exec urxvt; exec xterm -e ranger;
 bindsym $mod+Ctrl+2 workspace "2 " exec chromium;
 bindsym $mod+Ctrl+3 workspace "3 " exec i3-sensible-terminal -e weechat;
-bindsym $mod+Ctrl+4 workspace "4 " exec milkytracker; exec i3-sensible-terminal -e alsamixer;
+bindsym $mod+Ctrl+4 exec i3-msg workspace 4 ; exec urxvt --role term1; exec urxvt --role term2; exec urxvt -e ranger --role ranger;
 bindsym $mod+Ctrl+5 workspace "5 " exec chromium https://docs.google.com/document/d/1-DdcHw7gOtdHGdplNRQwhQWjiZJ29Fc2RFE1NrrzYzg/edit
 bindsym $mod+Ctrl+6 workspace "6 "
 bindsym $mod+Ctrl+7 workspace "7 "

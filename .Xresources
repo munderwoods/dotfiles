@@ -64,3 +64,8 @@ rofi.padding: 32
    URxvt.perl-ext: default,matcher
    URxvt.matcher.button: 1
    URxvt.url-launcher: /usr/bin/chromium
+
+#xterm config
+XTerm.vt100.faceName: xft:Dina-10
+XTerm.vt100.font: 7x13
+xterm*borderWidth:0

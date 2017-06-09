@@ -1,0 +1,37 @@
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "user_off",
+    "geometry": {
+       "height": 768,
+       "width": 1024,
+       "x": 444,
+       "y": 106
+    },
+    "name": "MilkyTracker - Untitled.xm",
+    "percent": 0.5,
+    "swallows": [
+       {
+       }
+    ],
+    "type": "con"
+}
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "user_off",
+    "geometry": {
+       "height": 444,
+       "width": 700,
+       "x": 0,
+       "y": 0
+    },
+    "name": "alsamixer",
+    "percent": 0.5,
+    "swallows": [
+       {
+       }
+    ],
+    "type": "con"
+}
+
