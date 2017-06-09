@@ -1,0 +1,116 @@
+/* -------------------------------------------------------------------
+  RESETS
+---------------------------------------------------------------------- */
+
+html,
+body,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------------------------------------------
+  BASE
+---------------------------------------------------------------------- */
+@font-face {
+	font-family: 'envy_code';
+	src: local('Envy Code R');	
+		 url('http://icyphox.github.io/theicyblog/envycoder.ttf') format('truetype');
+}
+
+body {
+  background-color: #COLOR0;
+  color: #COLOR1;
+  font-family: "envy_code", monospace;
+  font-size: 15px;
+}
+
+h3 {
+  display: inline;
+  padding-bottom: 5px;
+  font-size: 1em;
+}
+
+a, a:visited {
+  display: block;
+  padding-top: 2px;
+  color: #COLOR3;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover { color: #COLOR7; }
+
+/* -------------------------------------------------------------------
+  COLOURS
+---------------------------------------------------------------------- */
+
+.blue     { color: #COLOR4; }
+.cyan     { color: #COLOR9; }
+.green    { color: #COLORX13; }
+.magenta  { color: #COLOR3; }
+.orange   { color: #COLORX10; }
+.red      { color: #COLOR5; }
+.violet   { color: #COLOR8; }
+.yellow   { color: #COLORX11; }
+
+/* -------------------------------------------------------------------
+  LAYOUT
+---------------------------------------------------------------------- */
+
+#container {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 700px;
+  height: auto;
+}
+
+#searchbox {
+  margin: 4px;
+  padding: 8px;
+  background-color: #COLOR0;
+  border: 5px solid #COLOR0;
+  -webkit-box-shadow: 1px 1px 10px 0px #000;
+     -moz-box-shadow: 1px 1px 10px 0px #000;
+          box-shadow: 1px 1px 10px 0px #000;
+}
+
+#links {
+  display: -moz-box;
+  display: -webkit-box;
+  width: 100%;
+}
+
+.box {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  margin: 4px;
+  padding: 8px;
+  background-color: #COLOR0;
+  border: 5px solid #COLOR0;
+  -webkit-box-shadow: 1px 1px 10px 0px #000;
+     -moz-box-shadow: 1px 1px 10px 0px #000;
+          box-shadow: 1px 1px 10px 0px #000;
+}
+
+/* -------------------------------------------------------------------
+  SEARCH
+---------------------------------------------------------------------- */
+
+form {
+  display: inline;
+}
+
+input 	{
+  display: inline;
+  width: 64%;
+  background: none;
+  border: none;
+  color: #COLOR1;
+  font-size: 1em;
+  font-family: "envy_code", monospace;
+  font-weight: bold; 
+}

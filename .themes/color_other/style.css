@@ -1,0 +1,116 @@
+/* -------------------------------------------------------------------
+  RESETS
+---------------------------------------------------------------------- */
+
+html,
+body,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------------------------------------------
+  BASE
+---------------------------------------------------------------------- */
+@font-face {
+	font-family: 'envy_code';
+	src: local('Envy Code R');	
+		 url('http://icyphox.github.io/theicyblog/envycoder.ttf') format('truetype');
+}
+
+body {
+  background-color: #222222;
+  color: #00ffff;
+  font-family: "envy_code", monospace;
+  font-size: 15px;
+}
+
+h3 {
+  display: inline;
+  padding-bottom: 5px;
+  font-size: 1em;
+}
+
+a, a:visited {
+  display: block;
+  padding-top: 2px;
+  color: #73ecec;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover { color: #2f6969; }
+
+/* -------------------------------------------------------------------
+  COLOURS
+---------------------------------------------------------------------- */
+
+.blue     { color: #075859; }
+.cyan     { color: #00ffff; }
+.green    { color: #3cffff; }
+.magenta  { color: #73ecec; }
+.orange   { color: #00ffff; }
+.red      { color: #2e9e9e; }
+.violet   { color: #434343; }
+.yellow   { color: #00ffff; }
+
+/* -------------------------------------------------------------------
+  LAYOUT
+---------------------------------------------------------------------- */
+
+#container {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 700px;
+  height: auto;
+}
+
+#searchbox {
+  margin: 4px;
+  padding: 8px;
+  background-color: #222222;
+  border: 5px solid #222222;
+  -webkit-box-shadow: 1px 1px 10px 0px #000;
+     -moz-box-shadow: 1px 1px 10px 0px #000;
+          box-shadow: 1px 1px 10px 0px #000;
+}
+
+#links {
+  display: -moz-box;
+  display: -webkit-box;
+  width: 100%;
+}
+
+.box {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  margin: 4px;
+  padding: 8px;
+  background-color: #222222;
+  border: 5px solid #222222;
+  -webkit-box-shadow: 1px 1px 10px 0px #000;
+     -moz-box-shadow: 1px 1px 10px 0px #000;
+          box-shadow: 1px 1px 10px 0px #000;
+}
+
+/* -------------------------------------------------------------------
+  SEARCH
+---------------------------------------------------------------------- */
+
+form {
+  display: inline;
+}
+
+input 	{
+  display: inline;
+  width: 64%;
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 1em;
+  font-family: "envy_code", monospace;
+  font-weight: bold; 
+}

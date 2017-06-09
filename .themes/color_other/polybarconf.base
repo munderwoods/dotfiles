@@ -1,0 +1,130 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[global/wm]
+margin-top = 5
+margin-bottom = 2
+override-redirect = true
+
+[bar/top]
+width = 100%
+height = 26
+offset-x = 0
+offset-y = 0
+
+locale = de_DE.UTF-8
+
+background = #COLOR0
+foreground = #COLOR1
+
+font-0 = Dina:size=9;
+font-1 = FontAwesome:size=10;0
+
+modules-left =  date
+modules-center = i3
+modules-right = volume powermenu
+
+tray-position = right
+tray-padding = 2
+tray-background = #COLOR0
+tray-transparent = false
+tray-detached = false
+
+underline-size = 3
+
+spacing = 1
+padding-left = 1
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 1
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+module-margin-right = 1
+ramp-volume-0 =  
+ramp-volume-1 =  
+ramp-volume-2 = 
+
+format-volume-foreground = #COLOR1
+format-volume-background = #COLOR0
+
+label-muted = 🔇muted
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+module-margin-left = 2
+format-padding = 2
+format-background = #COLOR0
+
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+enable-click = false
+index-sort = true
+format = <label-state>
+
+label-focused = 
+label-focused-foreground = #COLOR2
+label-focused-background = #COLOR0
+label-focused-padding = 1
+
+label-unfocused = 
+label-unfocused-foreground = #COLOR2
+label-unfocused-background = #COLOR0
+label-unfocused-padding = 1
+
+label-urgent = 
+label-urgent-foreground = #900000
+label-urgent-background = #COLOR2 
+label-urgent-padding = 1
+
+[module/date]
+type = internal/date
+interval = 1
+date = " %A, %d %B  %H:%M"
+
+;format = %date% 
+;format-padding = 1
+;format-background = #COLOR3
+;format-foreground = #COLOR4
+
+[module/powermenu]
+type = custom/menu
+
+label-open =  power
+label-open-foreground = #COLOR3
+label-open-background = #COLOR0
+label-close =  cancel
+label-close-foreground = #COLOR3
+label-close-background = #COLOR0
+label-separator = |
+label-separator-foreground = #COLOR2
+label-separator-background = #COLOR0
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = shutdown
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 = shutdown
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+
+; vim:ft=dosini

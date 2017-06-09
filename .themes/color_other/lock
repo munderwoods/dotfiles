@@ -1,0 +1,4 @@
+#!/bin/bash
+scrot /tmp/screenshot.png
+convert /tmp/screenshot.png -scale 10% -blur 2x1 -scale 1000% /tmp/screenshotblur.png
+i3lock -i /tmp/screenshotblur.png -l '#0f767c' -o '#083b3d' -w '#a0a099' -e

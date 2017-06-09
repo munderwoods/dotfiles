@@ -13,12 +13,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-
-font pango:Dina 11
+#font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango: Dina 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -27,21 +26,30 @@ font pango:Dina 11
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
+#for_window [class="URxvt"] floating enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+# lock the screen
+bindsym $mod+Ctrl+l exec "lock -f Envy-Code-R"
+
+# start rofi (an alternative to dmenu)
+bindsym $mod+d exec "rofi -show run"
+#bindsym $mod+d exec --no-startup-id rofi
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# disable title bar
+new_window pixel 2
 
 # change focus
 bindsym $mod+j focus left
@@ -93,54 +101,35 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
+# Name the workspaces
+set $tag1 ""
+set $tag2 ""
+set $tag3 ""
+set $tag4 ""
+set $tag5 ""
+
+
 # switch to workspace
-bindsym $mod+1 workspace "1 "
-bindsym $mod+2 workspace "2 "
-bindsym $mod+3 workspace "3 "
-bindsym $mod+4 workspace "4 "
-bindsym $mod+5 workspace "5 "
-bindsym $mod+6 workspace "6 "
-bindsym $mod+7 workspace "7 "
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $tag1
+bindsym $mod+2 workspace $tag2
+bindsym $mod+3 workspace $tag3
+bindsym $mod+4 workspace $tag4
+bindsym $mod+5 workspace $tag5
+
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace "1 "
-bindsym $mod+Shift+2 move container to workspace "2 "
-bindsym $mod+Shift+3 move container to workspace "3 "
-bindsym $mod+Shift+4 move container to workspace "4 "
-bindsym $mod+Shift+5 move container to workspace "5 "
-bindsym $mod+Shift+6 move container to workspace "6 "
-bindsym $mod+Shift+7 move container to workspace "7 "
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $tag1
+bindsym $mod+Shift+2 move container to workspace $tag2
+bindsym $mod+Shift+3 move container to workspace $tag3
+bindsym $mod+Shift+4 move container to workspace $tag4
+bindsym $mod+Shift+5 move container to workspace $tag5
 
-# move focused container to workspace and execute program
-bindsym $mod+Ctrl+1 workspace "1 " exec i3-msg append_layout .i3/workspace-1.json; exec urxvt; exec urxvt; exec xterm -e ranger;
-bindsym $mod+Ctrl+2 workspace "2 " exec chromium;
-bindsym $mod+mod1+2 workspace "2 " exec qutebrowser;
-bindsym $mod+Ctrl+3 workspace "3 " exec i3-sensible-terminal -e weechat;
-bindsym $mod+Ctrl+4 workspace "4 " exec milkytracker; exec urxvt -e alsamixer;
-bindsym $mod+Ctrl+5 workspace "5 " exec chromium https://docs.google.com/document/d/1-DdcHw7gOtdHGdplNRQwhQWjiZJ29Fc2RFE1NrrzYzg/edit
-bindsym $mod+Ctrl+6 workspace "6 "
-bindsym $mod+Ctrl+7 workspace "7 "
-bindsym $mod+Ctrl+8 workspace 8
-bindsym $mod+Ctrl+9 workspace 9
-bindsym $mod+Ctrl+0 workspace 10
-for_window [class="milkytracker"] floating enable
-for_window [title="alsamixer"] floating enable
-
-#assign gchat to workspace 3
-assign [class="^Chromium$"instance="^crx_nckgahadagoaajjgafhacjanaoiihapd$"] "3 "
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -166,32 +155,43 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# assign windows to workspaces
+
+#assign [class="Firefox"] $tag1
+assign [class="Steam"] $tag4
+assign [class="Battle.net.exe"] $tag5
+#assign [class="banshee"] $tag2
+
+
+#for_window [class="Firefox"] border pixel 1
+for_window [class="Steam"] floating enable
+for_window [class="Keybase"] floating enable
+for_window [class="Battle.net.exe"] floating enable
+
 bindsym $mod+r mode "resize"
-
-#gaps
-for_window [class="^.*"] border pixel 0
-gaps inner 10
-gaps outer 13
-smart_gaps on
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-bar {
- 	status_command i3blocks -c /home/matt/.i3/i3blocks.conf
-	colors {
-		background #0e1f23
-	    	separator #0e1f23 
-		#                  border             background         text
-		focused_workspace  #0e1f23            #0e1f23            #b5bdca
-		inactive_workspace #0e1f23            #0e1f23            #1b2b34
-		urgent_workspace   #e12a36   	      #e12a36            #b5bdca
-
-	}
-}
 
 # Window Colors
 # class                 border  backgr. text
-client.focused          #0e1f23 #0e1f23 #b5bdca
-client.focused_inactive #0e1f23 #0e1f23 #222222
-client.unfocused        #0e1f23 #0e1f23 #90949b
-client.urgent           #0e1f23 #00ffff #900000
+client.focused          #00ffff #00ffff #222222
+client.focused_inactive #434343 #434343 #222222
+client.unfocused        #222222 #222222 #00ffff
+client.urgent           #900000 #00ffff #900000
+
+smart_gaps on
+gaps inner 13
+gaps outer 5
+smart_borders on
+
+
+# executions
+exec xrdb -load ~/.Xresources
+exec compton &
+exec xautolock -time 7 -locker lock &
+exec polybar top -c ~/polybarconf &
+exec killall -q xfce4-notifyd
+exec dunst -conf ~/.i3/dunstrc & 
+#exec wpg -s greywall.png
+exec feh --bg-tile ~/Pictures/l33tpattern.png
+# cycle workspaces
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+q workspace next
