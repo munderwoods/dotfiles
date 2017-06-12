@@ -1,0 +1,9 @@
+PID_FILE=/tmp/chill.pid
+if [ -f $PID_FILE ]; then 
+	kill `cat $PID_FILE`
+	rm $PID_FILE
+	exit
+fi
+mpv --vid=no https://www.youtube.com/watch?v=RU3srXqYAO0 1>/dev/null 2>/dev/null &
+echo $! >$PID_FILE
+
