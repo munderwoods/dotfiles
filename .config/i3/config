@@ -124,7 +124,7 @@ bindsym $mod+mod1+2 workspace "2 " exec qutebrowser;
 bindsym $mod+Ctrl+3 workspace "3 " exec i3-sensible-terminal -e irssi;
 bindsym $mod+Ctrl+4 workspace "4 " exec milkytracker; exec urxvt -e alsamixer;
 bindsym $mod+Ctrl+5 workspace "5 " exec chromium https://docs.google.com/document/d/1-DdcHw7gOtdHGdplNRQwhQWjiZJ29Fc2RFE1NrrzYzg/edit
-bindsym $mod+Ctrl+6 workspace "6 " exec qutebrowser http://twitch.tv/thevomitorium;
+bindsym $mod+Ctrl+6 workspace "6 " exec chromium http://twitch.tv/thevomitorium;
 
 bindsym $mod+Ctrl+7 workspace "7 "
 bindsym $mod+Ctrl+8 workspace 8
