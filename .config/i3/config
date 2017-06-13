@@ -188,7 +188,7 @@ bar {
 	    	separator #0e1f23 
 		#                  border             background         text
 		focused_workspace  #0e1f23            #0e1f23            #b5bdca
-		inactive_workspace #0e1f23            #0e1f23            #1b2b34
+		inactive_workspace #0e1f23            #0e1f23            #4d768c
 		urgent_workspace   #e12a36   	      #e12a36            #b5bdca
 
 	}
