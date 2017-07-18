@@ -1,0 +1,2 @@
+#!/bin/bash
+setxkbmap -print -verbose 10 | grep -qE "layout:     us" && setxkbmap dvorak || setxkbmap us
