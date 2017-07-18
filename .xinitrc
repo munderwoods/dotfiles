@@ -48,8 +48,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 feh --bg-scale ~/papes/nt.jpg &
-sudo pa_supplicant  -i wls3 -c /etc/wpa_supplicant/wpa_supplicant.conf &
-sudo dhcpcd wls &
+xbindkeys &
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+xmodmap -e 'add mod3 = Menu' 
+#sudo wpa_supplicant  -i wls3s0-c /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf &
+#sudo dhcpcd wlp3s0 &
 exec i3
 #twm &
 #xclock -geometry 50x50-1+1 &
