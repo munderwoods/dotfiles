@@ -4,6 +4,6 @@ if [ -f $PID_FILE ]; then
 	rm $PID_FILE
 	exit
 fi
-mpv --vid=no https://www.youtube.com/watch?v=RU3srXqYAO0 1>/dev/null 2>/dev/null &
+mpv --vid=no https://www.youtube.com/watch?v=hX3j0sQ7ot8 &
 echo $! >$PID_FILE
 

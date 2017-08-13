@@ -121,9 +121,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Ctrl+1 workspace "1 " exec i3-msg append_layout .i3/workspace-1.json; exec urxvt; exec urxvt; exec xterm -e ranger;
 bindsym $mod+Ctrl+2 workspace "2 " exec chromium;
 bindsym $mod+mod1+2 workspace "2 " exec qutebrowser;
-bindsym $mod+Ctrl+3 workspace "3 " exec i3-sensible-terminal -e irssi;
+bindsym $mod+mod1+3 workspace "3 " exec i3-sensible-terminal -e irssi;
+bindsym $mod+Ctrl+3 workspace "3 " exec discord;
 bindsym $mod+Ctrl+4 workspace "4 " exec milkytracker; exec urxvt -e alsamixer;
-bindsym $mod+Ctrl+5 workspace "5 " exec chromium https://docs.google.com/document/d/1-DdcHw7gOtdHGdplNRQwhQWjiZJ29Fc2RFE1NrrzYzg/edit
+bindsym $mod+Ctrl+5 workspace "5 " exec chromium https://drive.google.com/drive/my-drive
 bindsym $mod+Ctrl+6 workspace "6 " exec chromium http://twitch.tv/thevomitorium;
 bindsym $mod+Ctrl+7 workspace "7 " exec retroarch
 bindsym $mod+mod1+7 workspace "7 " exec epsxe
@@ -136,6 +137,7 @@ for_window [title="alsamixer"] floating enable
 #assign client to specific workspace
 assign [class="^Chromium$"instance="^crx_nckgahadagoaajjgafhacjanaoiihapd$"] "3 "
 assign [class="^mpv$"] "6 "
+assign [class="^discord$"] "3 "
 
 #play jams
 bindsym $mod+m exec chill
