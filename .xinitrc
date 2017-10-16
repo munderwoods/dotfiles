@@ -47,10 +47,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
+tlp start &
 feh --bg-scale ~/papes/nt.jpg &
 xbindkeys &
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
-xmodmap -e 'add mod3 = Menu' 
+xmodmap -e 'add mod3 = Menu'
+trackpad
 #sudo wpa_supplicant  -i wls3s0-c /etc/wpa_supplicant/wpa_supplicant-wlp3s0.conf &
 #sudo dhcpcd wlp3s0 &
 exec i3
