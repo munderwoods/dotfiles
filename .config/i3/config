@@ -126,7 +126,7 @@ bindsym $mod+Ctrl+3 workspace "3 " exec discord;
 bindsym $mod+Ctrl+4 workspace "4 " exec milkytracker; exec urxvt -e alsamixer;
 bindsym $mod+mod1+4 workspace "4 " exec urxvt -e jam;
 bindsym $mod+Ctrl+5 workspace "5 " exec chromium --new-window https://drive.google.com/drive/my-drive
-bindsym $mod+Ctrl+6 workspace "6 " exec chromium --new-window http://twitch.tv/thevomitorium;
+bindsym $mod+Ctrl+6 workspace "6 " exec exec urxvt -e twitchy 
 bindsym $mod+mod1+6 workspace "6 " exec kdenlive
 bindsym $mod+Ctrl+7 workspace "7 " exec retroarch
 bindsym $mod+mod1+7 workspace "7 " exec steam 
