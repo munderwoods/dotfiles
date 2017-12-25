@@ -119,6 +119,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # move focused container to workspace and execute program
 bindsym $mod+Ctrl+1 workspace "1 " exec i3-msg append_layout .i3/workspace-1.json; exec urxvt; exec urxvt; exec xterm -e ranger;
+bindsym $mod+mod1+1 workspace "1 " exec i3-sensible-terminal -e byobu;
 bindsym $mod+Ctrl+2 workspace "2 " exec chromium --new-window;
 bindsym $mod+mod1+2 workspace "2 " exec qutebrowser;
 bindsym $mod+mod1+3 workspace "3 " exec i3-sensible-terminal -e hangups;

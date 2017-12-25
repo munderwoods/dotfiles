@@ -28,6 +28,20 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'valloric/youcompleteme'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'msanders/snipmate.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'ap/vim-css-color'
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'leafgarland/typescript-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -441,5 +455,16 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 set number
+set mouse+=a
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard |grep -v "\.png" |grep -v "dist\/"']
+let g:indent_guides_start_level=2
+let g:indent_guides_enable_on_vim_startup=1
+
