@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 
-font pango:Dina 11
+font pango:Dina 7 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -37,7 +37,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -119,7 +119,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # move focused container to workspace and execute program
 bindsym $mod+Ctrl+1 workspace "1 " exec i3-msg append_layout .i3/workspace-1.json; exec urxvt; exec urxvt; exec xterm -e ranger;
-bindsym $mod+Ctrl+2 workspace "2 " exec chromium;
+bindsym $mod+Ctrl+2 workspace "2 " exec google-chrome-stable;
 bindsym $mod+mod1+2 workspace "2 " exec qutebrowser;
 bindsym $mod+Ctrl+3 workspace "3 " exec i3-sensible-terminal -e irssi;
 bindsym $mod+Ctrl+4 workspace "4 " exec milkytracker; exec urxvt -e alsamixer;
@@ -138,7 +138,8 @@ assign [class="^Chromium$"instance="^crx_nckgahadagoaajjgafhacjanaoiihapd$"] "3 
 assign [class="^mpv$"] "6 "
 
 #play jams
-bindsym $mod+m exec chill
+bindsym $mod+m exec ~/bin/chill
+bindsym --release Print exec --no-startup-id ~/bin/screenshot
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -172,14 +173,17 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym F19 exec "~/bin/rotate"
+
+for_window [class="^.*"] border pixel 0
 
 #gaps
-for_window [class="^.*"] border pixel 0
-gaps inner 10
-gaps outer 13
-smart_gaps on
+#gaps inner 10
+#gaps outer 13
+#smart_gaps on
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+#bindsym --whole-window button3 exec rofi -show drun
 
 bar {
  	status_command i3blocks -c /home/matt/.i3/i3blocks.conf
@@ -187,8 +191,8 @@ bar {
 		background #0e1f23
 	    	separator #0e1f23 
 		#                  border             background         text
-		focused_workspace  #0e1f23            #0e1f23            #b5bdca
-		inactive_workspace #0e1f23            #0e1f23            #1b2b34
+		focused_workspace  #b5bdca            #0e1f23            #b5bdca
+		inactive_workspace #0e1f23            #0e1f23            #b5bdca
 		urgent_workspace   #e12a36   	      #e12a36            #b5bdca
 
 	}
